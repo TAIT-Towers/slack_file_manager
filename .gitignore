@@ -105,3 +105,15 @@ dist
 
 #VSCode Debug Config
 .vscode
+
+testfile.js
+testfile.ts
+
+#Ignore Images
+*.jpg
+*.jpeg
+*.png
+*.gif
+
+#Ignore build directory
+build
