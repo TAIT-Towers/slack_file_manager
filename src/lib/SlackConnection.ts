@@ -1,30 +1,26 @@
 import { WebClient } from '@slack/web-api';
 
-import * as request from 'request-promise-native';
 import * as fs from 'fs';
+import requestPromise = require('request-promise-native');
 
 /**
  * Wrapper for the Slack Client/Request packages
  */
 export default class SlackConnection {
-    private _token: string;
-    private _slack_client: WebClient;
+    public readonly token: string;
+    public readonly slack_client: WebClient;
 
     constructor (token: string){
-        this._token = token;
-        this._slack_client = new WebClient(token);
-    }
-
-    get token():string{
-        return this._token;
-    }
+        this.token = token;
+        this.slack_client = new WebClient(token);
+    }    
 
     public getFileInfo(file_id:string):Promise<object> {
-        return this._slack_client.files.info({file: file_id});
+        return this.slack_client.files.info({file: file_id});
     }
 
     public uploadFile(filepath:string, filename:string):Promise<object> {
-        return this._slack_client.files.upload({filename: filename, file: fs.createReadStream(filepath)});
+        return this.slack_client.files.upload({filename: filename, file: fs.createReadStream(filepath)});
     }
     
     public downloadFile(url:string):Promise<object> {
@@ -32,10 +28,10 @@ export default class SlackConnection {
             method: 'GET',
             uri: url,
             headers: {
-                Authorization: 'Bearer ' + this._token
+                Authorization: 'Bearer ' + this.token
             }
         }
 
-        return request(options)
+        return requestPromise(options)
     }
 }

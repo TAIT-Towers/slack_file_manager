@@ -7,7 +7,7 @@ export default class SlackFileManager {
         this.slack = new SlackConnection(slack_token);
     }
 
-    changeToken = (slack_token: string) => {
+    public changeToken(slack_token: string):void {
         this.slack = new SlackConnection(slack_token);        
     }
     

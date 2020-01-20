@@ -1,0 +1,8 @@
+node_modules/
+src/
+.gitignore
+./build/test
+.vscode
+.mocharc.json
+.tsconfig.json
+.github/

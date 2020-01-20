@@ -117,3 +117,7 @@ testfile.ts
 
 #Ignore build directory
 build
+
+#ignore map files
+*.js.map
+*.js

@@ -26,9 +26,11 @@
   },
   "scripts": {
     "test": "mocha",
+    "prepare": "npm run build",
     "build": "tsc --build tsconfig.json",
-    "build:dev": "rm -rf ./build && tsc --build tsconfig.json"
+    "build:clean": "rm -rf ./build && tsc --build tsconfig.json"
   },
+  "types": "./build/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TAIT-Towers/slack_file_manager.git"

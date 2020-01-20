@@ -1,4 +1,4 @@
-import {assert, expect} from 'chai';
+import {assert} from 'chai';
 import SlackConnection from '../lib/SlackConnection';
 
 describe('Unit Test - SlackConnection', () => {
@@ -12,7 +12,7 @@ describe('Unit Test - SlackConnection', () => {
         assert.isNotEmpty(obj.token);
     });
 
-    // it('should have a token of type String', () => {
+    it('should have a token of type String', () => {
         
-    // })
+    })
 });
