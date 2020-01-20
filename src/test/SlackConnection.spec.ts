@@ -1,7 +1,7 @@
 import {assert, expect} from 'chai';
 import SlackConnection from '../lib/SlackConnection';
 
-describe('Testing SlackConnection', () => {
+describe('Unit Test - SlackConnection', () => {
     it('should assert obj is an instance of SlackConnection', () => {
         var obj = new SlackConnection('test-token');
         assert.instanceOf(obj, SlackConnection);

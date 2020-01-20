@@ -3,7 +3,7 @@ import { assert, expect } from "chai";
 import SFM from "../index";
 import SlackConnection from "../lib/SlackConnection";
 
-describe('Testing SlackFileManager', () => {
+describe('Unit Test - SlackFileManager', () => {
     it('should create a new instance of SFM', () => {
         const sfm = new SFM('mytoken');
         assert.instanceOf(sfm, SFM)
@@ -20,4 +20,8 @@ describe('Testing SlackFileManager', () => {
         var sfm = new SFM('mytoken');
         assert.instanceOf(sfm.slack, SlackConnection);
     });    
+});
+
+describe('Integration Test - SlackFileManager', () => {
+
 });
