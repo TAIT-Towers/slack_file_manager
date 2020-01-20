@@ -1,7 +1,7 @@
 node_modules/
 src/
 .gitignore
-./build/test
+./build/test/
 .vscode
 .mocharc.json
 .tsconfig.json
