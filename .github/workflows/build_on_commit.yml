@@ -14,4 +14,4 @@ jobs:
     - name: Run Build Action
       run: npm run build
     - name: Run Tests
-      run: mocha
+      run: npm run test
