@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Install Dependencies
+      run: npm install --save-dev
     - name: Run Build Action
       run: npm run build
     - name: Say Hi
