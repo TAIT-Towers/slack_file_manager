@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "rootDir": "./src",
+        "rootDir": "src",
         "outDir": "build",        
         "target": "es2017",
         "module": "commonjs",
@@ -17,5 +17,7 @@
         "resolveJsonModule": true
     },
     "include": ["./src/**/*"],
-    "exclude": ["node_modules"]
+    "exclude": [
+        "node_modules"        
+    ]
 }
