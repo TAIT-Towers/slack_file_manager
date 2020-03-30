@@ -15,15 +15,12 @@ jobs:
     # Setup .npmrc file to publish to GitHub Packages
     - name: Run Install
       run: npm install --save-dev
-
     - name: Run Build Action
       run: npm run build
-
     - name: Run Tests
       run: npm run test
-    
-    - name: Github Packages Publish
     - uses: actions/setup-node@v1
+    - name: Github Packages Publish
       with:
         node-version: '12.x'
         registry-url: 'https://npm.pkg.github.com'
