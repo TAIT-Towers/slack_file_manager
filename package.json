@@ -1,5 +1,5 @@
 {
-  "name": "slack_file_manager",
+  "name": "@tait-towers/slack_file_manager",
   "version": "1.0.0",
   "description": "Small abstraction for handling files in Slack",
   "main": "./build/index.js",
