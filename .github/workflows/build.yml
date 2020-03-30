@@ -13,8 +13,8 @@ jobs:
       with:
         node-version: '12.x'
         registry-url: 'https://npm.pkg.github.com'
-        scope: '@tait-towers' # Defaults to the user or organization that owns the workflow file
     - run: npm install --save-dev
+    - run: npm run build
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN_2 }}
