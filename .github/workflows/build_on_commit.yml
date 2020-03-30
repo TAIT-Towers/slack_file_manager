@@ -12,9 +12,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Install Dependencies
+    # Setup .npmrc file to publish to GitHub Packages
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@tait-towers' # Defaults to the user or organization that owns the workflow file
+
+    - name: Run Install
       run: npm install --save-dev
+
     - name: Run Build Action
       run: npm run build
+
     - name: Run Tests
       run: npm run test
+    
+    - name: Github Packages Publish
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
