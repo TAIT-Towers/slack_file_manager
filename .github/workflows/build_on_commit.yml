@@ -7,9 +7,6 @@ on:
     tags: 
       - v*
 
-env:
-  IMAGE_NAME: slack_file_manager/slack_file_manager
-
 jobs:
   test:
     runs-on: ubuntu-latest
