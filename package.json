@@ -40,8 +40,5 @@
   "bugs": {
     "url": "https://github.com/TAIT-Towers/slack_file_manager/issues"
   },
-  "homepage": "https://github.com/TAIT-Towers/slack_file_manager#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  }
+  "homepage": "https://github.com/TAIT-Towers/slack_file_manager#readme"
 }
