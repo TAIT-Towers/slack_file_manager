@@ -1,30 +1,18 @@
-name: Test and Build Package
-
+name: Run Tests
 on: 
   push:
     branches:
       - master
     tags: 
       - v*
-
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    # Setup .npmrc file to publish to GitHub Packages
     - name: Run Install
       run: npm install --save-dev
     - name: Run Build Action
       run: npm run build
     - name: Run Tests
       run: npm run test
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-        registry-url: 'https://npm.pkg.github.com'
-        scope: '@tait-towers' # Defaults to the user or organization that owns the workflow file
-    - name: Github Packages Publish
-    - run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
